@@ -6,7 +6,7 @@
 #    By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 12:10:57 by hmoon             #+#    #+#              #
-#    Updated: 2022/03/30 13:10:09 by hmoon            ###   ########.fr        #
+#    Updated: 2022/03/30 17:08:09 by hmoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ RM			:= rm -f
 
 MLX_DIR		:= ./mlx/
 MLX_LIB		:= libmlx.dylib
-MLX_HEADER	:= ./mlx/mlx.h
 
 SRCS_DIR	:= ./srcs/
 SRCS		:= $(addprefix $(SRCS_DIR), )
@@ -39,10 +38,10 @@ endif
 all			: mlx $(NAME)
 
 $(NAME)		: $(MLX_LIB) $(OBJS)
-		$(CC) $(CFLAGS) -l$(DIR)$(MLX_LIB) $(OBJ) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o			: %.c
-		$(CC) $(CFLAGS) -i$(MLX_HEADER) -I$(DIR) -c $< -o $@
+		$(CC) $(CFLAGS) -I$(DIR) -c $< -o $@
 
 .PHONY		: bonus
 bonus		:
@@ -51,12 +50,12 @@ bonus		:
 .PHONY		: mlx
 mlx			:
 		@make -C $(MLX_DIR)
-		cp $(MLX_DIR)$(MLX_LIB) $(DIR)
+		cp $(MLX_DIR)$(MLX_LIB) .
 
 .PHONY		: clean
 clean		:
 		@make -C $(MLX_DIR) clean
-		$(RM) $(OBJS) $(OBJS_BONUS) $(SRCS_DIR)$(MLX_LIB) $(BONUS_DIR)$(MLX_LIB)
+		$(RM) $(OBJS) $(OBJS_BONUS) $(MLX_LIB)
 
 .PHONY		: fclean
 fclean		: clean
