@@ -6,7 +6,7 @@
 #    By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 12:10:57 by hmoon             #+#    #+#              #
-#    Updated: 2022/03/30 17:08:09 by hmoon            ###   ########.fr        #
+#    Updated: 2022/03/30 17:26:59 by hmoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,8 @@ endif
 .PHONY		: all
 all			: mlx $(NAME)
 
-$(NAME)		: $(MLX_LIB) $(OBJS)
-		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME)		: $(OBJS)
+		$(CC) $(CFLAGS) $(MLX_LIB) $(OBJ) -o $(NAME)
 
 %.o			: %.c
 		$(CC) $(CFLAGS) -I$(DIR) -c $< -o $@
