@@ -6,14 +6,14 @@
 #    By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 12:10:57 by hmoon             #+#    #+#              #
-#    Updated: 2022/05/19 21:46:46 by hmoon            ###   ########.fr        #
+#    Updated: 2022/05/24 02:11:36 by hmoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			:= so_long
 CC				:= cc
 CFLAGS			:= -Wall -Wextra -Werror
-RM				:= rm -f
+RM				:= rm -rf
 
 LIBFT			:= ./libft/libft.a
 LIBFT_DIR		:= ./libft/
@@ -30,7 +30,7 @@ HEADER_BONUS	:= ./bonus/include/
 SRC_DIR_B		:= ./bonus/src/
 OBJ_DIR_B		:= ./bonus/.obj/
 
-SRC_FILES		:= $(addsuffix .c, )
+SRC_FILES		:= $(addsuffix .c, so_long)
 OBJ_FILES		:= $(SRC_FILES:.c=.o)
 SRC				:= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ				:= $(addprefix $(OBJ_DIR), $(OBJ_FILES))
@@ -45,17 +45,15 @@ ifdef BONUS
 		SRC_FOLDER		= $(SRC_DIR_B)
 		OBJ_FOLDER		= $(OBJ_DIR_B)
 		OBJS			= $(OBJ_BONUS)
-		PRINT			= BONUS
 else
 		INCLUDE			= $(HEADER)
 		SRC_FOLDER		= $(SRC_DIR)
 		OBJ_FOLDER		= $(OBJ_DIR)
 		OBJS			= $(OBJ)
-		PRINT			= SO_LONG
 endif
 
 .PHONY		: all
-all			: mlx $(LIBFT) $(NAME)
+all			: mlx $(LIBFT) $(OBJ_FOLDER) $(NAME)
 
 $(NAME)		: $(OBJS)
 	@$(CC) $(CFLAGS) $(MLX_LIB) $(LIBFT) $(OBJS) -o $(NAME)
@@ -78,14 +76,14 @@ bonus		:
 
 .PHONY		: mlx
 mlx			:
-	@make -C $(MLX_DIR)
-	cp $(MLX_DIR)$(MLX_LIB) .
+	@make -sC $(MLX_DIR)
+	@cp $(MLX_DIR)$(MLX_LIB) .
 
 .PHONY		: clean
 clean		:
-	@make -C $(MLX_DIR) clean
+	@make -sC $(MLX_DIR) clean
 	@make -C $(LIBFT_DIR) clean
-	@$(RM) $(OBJS) $(OBJS_BONUS) $(MLX_LIB)
+	@$(RM) $(OBJ_DIR) $(OBJ_DIR_B) $(MLX_LIB)
 
 .PHONY		: fclean
 fclean		: clean

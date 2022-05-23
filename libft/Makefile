@@ -6,7 +6,7 @@
 #    By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 00:50:10 by hmoon             #+#    #+#              #
-#    Updated: 2022/05/04 07:02:38 by hmoon            ###   ########.fr        #
+#    Updated: 2022/05/24 01:59:47 by hmoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,15 +33,11 @@ SRC_FILE	:=	ft_atoi.c \
 			ft_itoa.c ft_strmapi.c \
 			ft_putchar_fd.c ft_putstr_fd.c \
 			ft_putendl_fd.c ft_putnbr_fd.c \
-			ft_strcmp.c ft_free.c ft_malloc.c \
+			ft_strcmp.c ft_malloc.c \
 			ft_perror_exit.c \
-			ft_dup.c ft_dup2.c \
-			ft_fork.c ft_close.c \
-			ft_pipe.c ft_perror.c \
-			ft_waitpid.c ft_wifexited.c \
-			ft_wifsignaled.c ft_wifstopped.c \
-			ft_wexitstatus.c ft_wtermsig.c \
-			ft_open.c get_next_line.c
+			ft_close.c ft_perror.c \
+			ft_error_exit.c ft_open.c \
+			get_next_line.c
 
 OBJ_FILE	:=	$(SRC_FILE:.c=.o)
 SRC			:=	$(addprefix $(SRC_DIR), $(SRC_FILE))

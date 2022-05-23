@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pipe.c                                          :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 16:43:19 by hmoon             #+#    #+#             */
-/*   Updated: 2022/04/29 05:02:57 by hmoon            ###   ########.fr       */
+/*   Created: 2022/05/19 21:48:47 by hmoon             #+#    #+#             */
+/*   Updated: 2022/05/24 02:37:38 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
-#include <errno.h>
-#include <stdlib.h>
+#include "include/so_long.h"
 
-int	ft_pipe(int pipefd[2])
+static void	is_file_compatibility(int ac, char **av)
 {
-	if (pipe(pipefd) == -1)
-	{
-		ft_perror("pipe", errno);
-		exit(EXIT_FAILURE);
-	}
-	return (1);
+	if (ac != 2)
+		ft_error_exit("Error\nInvalid argument number");
+	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".ber", 4) != 0)
+		ft_error_exit("Error\nInvalid file extension");
+	if (ft_strlen(av[1]) < 5)
+		ft_error_exit("Error\nInvalid file name");
+}
+
+int	main(int ac, char **av)
+{
+	is_file_compatibility(ac, av);
 }

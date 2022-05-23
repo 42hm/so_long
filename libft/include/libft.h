@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 18:50:49 by hmoon             #+#    #+#             */
-/*   Updated: 2022/04/30 10:52:05 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 01:59:25 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,13 @@ void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
-void				ft_free(void **src);
 void				*ft_malloc(size_t size);
 int					get_next_line(int fd, char **line);
 
 void				ft_close(int fd);
-int					ft_dup(int fd);
-int					ft_dup2(int fd1, int fd2);
-pid_t				ft_fork(void);
 void				ft_perror(const char *data, int errno);
-int					ft_pipe(int pipefd[2]);
-pid_t				ft_waitpid(pid_t pid, int *status, int option);
-int					ft_wexitstatus(int status);
-int					ft_wifexited(int status);
-int					ft_wifsignaled(int stauts);
-int					ft_wifstopped(int status);
-int					ft_wtermsig(int status);
 void				ft_perror_exit(const char *str, unsigned int exit_status);
 int					ft_open(const char *file, int mode);
+void				ft_error_exit(char *str);
 
 #endif

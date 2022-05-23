@@ -1,0 +1,383 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Tue May 24 02:11:51 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 36)
+OBJ := ./.obj/so_long.o
+# makefile (from `Makefile', line 35)
+SRC := ./src/so_long.c
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+ 
+# makefile
+CURDIR := /Users/hyunchae/so_long
+# makefile
+SHELL = /bin/sh
+# makefile (from `Makefile', line 16)
+RM := rm -rf
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 15)
+CFLAGS := -Wall -Wextra -Werror
+# makefile (from `Makefile', line 22)
+MLX_DIR := ./mlx/
+# makefile (from `Makefile', line 20)
+LIBFT_HEADER := ./libft/include/
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 27)
+OBJ_DIR := ./.obj/
+# makefile (from `Makefile', line 30)
+SRC_DIR_B := ./bonus/src/
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+P9K_SSH = 0
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dy/lmxyrwfj2y53ksflpws9_wnc0000gn/T/vscode-ipc-8b54d802-e867-40ac-a4c3-3f8539e65c34.sock
+# environment
+VSCODE_CWD = /
+# makefile (from `Makefile', line 34)
+OBJ_FILES := so_long.o
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# makefile (from `Makefile', line 38)
+SRC_FILES_B := 
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+LaunchInstanceID = B72F6C95-6EBD-47F9-A67C-F67A1B7D9CB2
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `Makefile', line 29)
+HEADER_BONUS := ./bonus/include/
+# makefile (from `Makefile', line 23)
+MLX_LIB := libmlx.dylib
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `Makefile', line 19)
+LIBFT_DIR := ./libft/
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.t1VpBOAaNs/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from `Makefile', line 52)
+OBJS = $(OBJ)
+# environment
+PWD = /Users/hyunchae/so_long
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/hyunchae
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/hyunchae/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LOGNAME = hyunchae
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from `Makefile', line 31)
+OBJ_DIR_B := ./bonus/.obj/
+# makefile (from `Makefile', line 40)
+SRC_BONUS := 
+# environment
+ZSH = /Users/hyunchae/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from `Makefile', line 50)
+SRC_FOLDER = $(SRC_DIR)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 18)
+LIBFT := ./libft/libft.a
+# makefile (from `Makefile', line 14)
+CC := cc
+# makefile (from `Makefile', line 39)
+OBJ_FILES_B := 
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = hyunchae
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 49)
+INCLUDE = $(HEADER)
+# makefile (from `Makefile', line 13)
+NAME := so_long
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/dy/lmxyrwfj2y53ksflpws9_wnc0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/hyunchae/Library/Application Support/Code/1.67.2-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.688741.688747
+ 
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# makefile (from `Makefile', line 26)
+SRC_DIR := ./src/
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# makefile (from `Makefile', line 41)
+OBJ_BONUS := 
+# makefile (from `Makefile', line 25)
+HEADER := ./include/
+# environment
+SECURITYSESSIONID = 186a5
+# automatic
+^F = $(notdir $^)
+# makefile (from `Makefile', line 33)
+SRC_FILES := so_long.c
+# default
+SUFFIXES := 
+# makefile (from `Makefile', line 51)
+OBJ_FOLDER = $(OBJ_DIR)
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 421
+# variable set hash-table stats:
+# Load=95/1024=9%, Rehash=0, Collisions=11/148=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777220, inode 711175): 11 files, no impossibilities.
+# ./src (device 16777220, inode 720043): No files, no impossibilities so far.
+
+# 11 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+.obj/%.o: ./src/%.c
+#  commands to execute (from `Makefile', line 68):
+	@$(CC) $(CFLAGS) -I$(MLX_DIR) -I$(LIBFT_HEADER) -I$(INCLUDE) -o $@ -c $<
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+all: mlx libft/libft.a .obj so_long
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+
+mlx:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := mlx
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  commands to execute (from `Makefile', line 79):
+	@make -sC $(MLX_DIR)
+	@cp $(MLX_DIR)$(MLX_LIB) .
+	
+
+.PHONY: all bonus mlx clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-24 02:11:36
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/libft.a:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 71):
+	@make -C $(LIBFT_DIR) all
+	
+
+bonus:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 75):
+	@make BONUS=1 all
+	
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 90):
+	@make -C ./libft fclean
+	@$(RM) $(NAME)
+	
+ 
+
+.obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 63):
+	@if [ ! -d $(OBJ_FOLDER) ]; then \
+	mkdir -p $(OBJ_FOLDER); \
+	fi
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.obj/so_long.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 84):
+	@make -sC $(MLX_DIR) clean
+	@make -C $(LIBFT_DIR) clean
+	@$(RM) $(OBJ_DIR) $(OBJ_DIR_B) $(MLX_LIB)
+	
+
+so_long: .obj/so_long.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 59):
+	@$(CC) $(CFLAGS) $(MLX_LIB) $(LIBFT) $(OBJS) -o $(NAME)
+	@echo "\033[01;32m       SUCCESS!      \033[0m"
+	
+
+# files hash-table stats:
+# Load=14/1024=1%, Rehash=0, Collisions=0/47=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Tue May 24 02:11:51 2022
+
+ 
