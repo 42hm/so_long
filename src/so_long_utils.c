@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 21:48:47 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 09:27:59 by hmoon            ###   ########.fr       */
+/*   Created: 2022/05/24 09:02:27 by hmoon             #+#    #+#             */
+/*   Updated: 2022/05/24 09:28:07 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-#include <stdio.h>
 
-void	so_long(t_mlx *mlx)
+void	make_bonus(t_map *map)
 {
-	init_mlx(mlx);
-}
-
-int	main(int ac, char **av)
-{
-	t_mlx	*mlx;
-	int		i;
+	int	i;
 
 	i = 0;
-	is_file_compatibility(ac, av);
-	mlx = alloc_mlx();
-	is_map_compatibility(av[1], mlx->map);
-	make_bonus(mlx->map);
-	so_long(mlx);
+	while (i < map->height && i < map->width)
+	{
+		if (map->maparr[i][i + map->width / 3] == '0')
+			map->maparr[i][i + map->width / 3] = 'B';
+		i += 2;
+	}
+}
+
+t_mlx	*alloc_mlx()
+{
+	t_mlx	*temp;
+
+	temp = ft_malloc(sizeof(t_mlx));
+	ft_memset(temp, 0, sizeof(t_mlx));
+	temp->map = ft_malloc(sizeof(t_map));
+	ft_memset(temp->map, 0, sizeof(t_map));
+	return (temp);
 }
