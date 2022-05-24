@@ -6,36 +6,11 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:34:34 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 18:06:05 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 19:07:16 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-static void	is_playable(t_map *map)
-{
-	int	x;
-	int	y;
-
-	y = 0;
-	while (++y < map->height - 1)
-	{
-		x = 0;
-		while (++x < map->width - 1)
-		{
-			if (map->maparr[y][x] == 'P' || map->maparr[y][x] == 'E')
-				if (map->maparr[y - 1][x - 1] == '1' \
-				&& map->maparr[y - 1][x] == '1' \
-				&& map->maparr[y - 1][x + 1] == '1' \
-				&& map->maparr[y][x - 1] == '1' \
-				&& map->maparr[y][x + 1] == '1' \
-				&& map->maparr[y + 1][x - 1] == '1' \
-				&& map->maparr[y + 1][x] == '1' \
-				&& map->maparr[y + 1][x + 1] == '1')
-					ft_error_exit("Error\nMap is not playable");
-		}
-	}
-}
 
 static void	check_char(t_check *check, char c)
 {
@@ -74,7 +49,6 @@ static void	is_map_possible(t_map *map)
 	if (check.collect_num < 1 || check.exit_num < 1 \
 	|| check.start_num < 1 || check.start_num != 1)
 		ft_error_exit("Error\nInvalid map charset");
-	is_playable(map);
 	map->collect_num = check.collect_num;
 	make_bonus(map);
 }

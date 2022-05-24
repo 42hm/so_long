@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:40:56 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 18:23:30 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 20:38:45 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	draw_cep(t_mlx *mlx, int x, int y)
 		mlx_put_image_to_window(mlx->mlx_ptr, mlx->window, \
 		mlx->map->player, x * BITSIZE, y * BITSIZE);
 	}
-	mlx_string_put(mlx->mlx_ptr, mlx->window, 66, 66, \
+	mlx_string_put(mlx->mlx_ptr, mlx->window, 13, 20, \
 	0xFFFFFF, temp = ft_itoa(mlx->move_count));
 	free(temp);
 }

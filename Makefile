@@ -6,7 +6,7 @@
 #    By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 12:10:57 by hmoon             #+#    #+#              #
-#    Updated: 2022/05/24 17:47:14 by hmoon            ###   ########.fr        #
+#    Updated: 2022/05/24 20:58:23 by hmoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ LIBFT			:= ./libft/libft.a
 LIBFT_DIR		:= ./libft/
 LIBFT_HEADER	:= ./libft/include/
 
-MLX_DIR			:= ./mlx/
-MLX_LIB			:= libmlx.dylib
+MLX_DIR			:= ./mlx
+MLX_OPENGL		:= -L ./mlx -lmlx
+MLX_FLAGS		:= -framework OpenGL -framework Appkit
 
 HEADER			:= ./include/
 SRC_DIR			:= ./src/
@@ -33,7 +34,7 @@ OBJ_DIR_B		:= ./bonus/.obj/
 SRC_FILES		:= $(addsuffix .c, so_long \
 					validate_file so_long_utils \
 					validate_map init_mlx \
-					set_image so_long_move )
+					set_image so_long_move)
 OBJ_FILES		:= $(SRC_FILES:.c=.o)
 SRC				:= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ				:= $(addprefix $(OBJ_DIR), $(OBJ_FILES))
@@ -59,7 +60,7 @@ endif
 all			: mlx $(LIBFT) $(OBJ_FOLDER) $(NAME)
 
 $(NAME)		: $(OBJS)
-	@$(CC) $(CFLAGS) $(MLX_LIB) $(LIBFT) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(MLX_OPENGL) $(MLX_FLAGS) $(LIBFT) $(OBJS) -o $(NAME)
 	@echo "\033[01;32m       SUCCESS!      \033[0m"
 
 $(OBJ_FOLDER)	:
@@ -79,8 +80,7 @@ bonus		:
 
 .PHONY		: mlx
 mlx			:
-	@make -sC $(MLX_DIR)
-	@cp $(MLX_DIR)$(MLX_LIB) .
+	@make -sC $(MLX_DIR) all
 
 .PHONY		: clean
 clean		:

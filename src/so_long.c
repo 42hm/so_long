@@ -6,31 +6,11 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:48:47 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 18:32:02 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 20:55:48 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-#include <stdio.h>
-
-static void	handle_event(t_mlx *mlx)
-{
-	t_mlx	*mlx_temp;
-
-	mlx_temp = mlx;
-	if (mlx_temp->map->maparr[mlx_temp->y][mlx_temp->x] == 'C')
-	{
-		mlx_temp->map->collect_num--;
-		mlx_temp->map->maparr[mlx_temp->y][mlx_temp->x] = '0';
-	}
-	else if (mlx_temp->map->maparr[mlx_temp->y][mlx_temp->x] == 'E')
-	{
-		if (mlx_temp->map->collect_num == 0)
-			so_long_exit(mlx_temp);
-	}
-	else if (mlx_temp->map->maparr[mlx_temp->y][mlx_temp->x] == 'B')
-		so_long_exit(mlx_temp);
-}
 
 static int	get_key(int key, void *param)
 {
@@ -60,7 +40,6 @@ static int	draw_loop(t_mlx *mlx)
 	mlx->loop++;
 	mlx_clear_window(mlx->mlx_ptr, mlx->window);
 	draw_map(mlx_temp);
-	handle_event(mlx_temp);
 	return (0);
 }
 

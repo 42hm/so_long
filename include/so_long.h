@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 02:37:12 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 18:23:33 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 20:58:28 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,20 @@ enum e_handle
 	UP = 126,
 };
 
-typedef struct	s_check
+typedef struct s_check
 {
 	int			exit_num;
 	int			start_num;
 	int			collect_num;
 }				t_check;
 
-typedef struct	s_map
+typedef struct s_map
 {
 	char		**maparr;
 	int			width;
 	int			height;
 	int			collect_num;
+	int			exit_flag;
 	void		*wall;
 	void		*floor;
 	void		*collect;
@@ -53,7 +54,7 @@ typedef struct	s_map
 	void		*wayout;
 }				t_map;
 
-typedef struct	s_mlx
+typedef struct s_mlx
 {
 	int			x;
 	int			y;
