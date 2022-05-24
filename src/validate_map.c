@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:34:34 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 17:28:03 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 18:06:05 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,18 @@ static void	is_playable(t_map *map)
 		x = 0;
 		while (++x < map->width - 1)
 		{
-			if (map->maparr[y][x] == 'P')
-				break ;
+			if (map->maparr[y][x] == 'P' || map->maparr[y][x] == 'E')
+				if (map->maparr[y - 1][x - 1] == '1' \
+				&& map->maparr[y - 1][x] == '1' \
+				&& map->maparr[y - 1][x + 1] == '1' \
+				&& map->maparr[y][x - 1] == '1' \
+				&& map->maparr[y][x + 1] == '1' \
+				&& map->maparr[y + 1][x - 1] == '1' \
+				&& map->maparr[y + 1][x] == '1' \
+				&& map->maparr[y + 1][x + 1] == '1')
+					ft_error_exit("Error\nMap is not playable");
 		}
-		if (map->maparr[y][x] == 'P')
-			break ;
 	}
-	if (map->maparr[y - 1][x - 1] == '1' && map->maparr[y - 1][x] == '1' \
-	&& map->maparr[y - 1][x + 1] == '1' && map->maparr[y][x - 1] == '1' \
-	&& map->maparr[y][x + 1] == '1' && map->maparr[y + 1][x - 1] == '1' \
-	&& map->maparr[y + 1][x] == '1' && map->maparr[y + 1][x + 1] == '1')
-		ft_error_exit("Error\nMap is not playable");
 }
 
 static void	check_char(t_check *check, char c)
@@ -75,6 +76,7 @@ static void	is_map_possible(t_map *map)
 		ft_error_exit("Error\nInvalid map charset");
 	is_playable(map);
 	map->collect_num = check.collect_num;
+	make_bonus(map);
 }
 
 static void	get_map_size(char *file, t_map *map)

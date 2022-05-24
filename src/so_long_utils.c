@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:02:27 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 17:26:50 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 18:16:03 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	void	destroy_image(t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx_ptr, mlx->map->player);
 }
 
-void	so_long_exit(t_mlx *mlx)
+int	so_long_exit(t_mlx *mlx)
 {
 	int	i;
 
@@ -37,6 +37,7 @@ void	so_long_exit(t_mlx *mlx)
 	free(mlx->map);
 	free(mlx);
 	exit(0);
+	return (0);
 }
 
 void	make_bonus(t_map *map)
@@ -46,8 +47,8 @@ void	make_bonus(t_map *map)
 	i = 0;
 	while (i < map->height && i < map->width)
 	{
-		if (map->maparr[i][i + map->width / 3] == '0')
-			map->maparr[i][i + map->width / 3] = 'B';
+		if (map->maparr[i][map->width / 3] == '0')
+			map->maparr[i][map->width / 3] = 'B';
 		i += 2;
 	}
 }

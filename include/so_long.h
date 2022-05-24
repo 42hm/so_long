@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 02:37:12 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 17:18:49 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 18:23:33 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ enum e_handle
 	W = 13,
 	REDCROSS = 17,
 	ESC = 53,
-	BITSIZE = 64,
+	BITSIZE = 34,
 	LEFT = 123,
 	RIGHT = 124,
 	DOWN = 125,
@@ -68,12 +68,14 @@ typedef struct	s_mlx
 void	is_file_compatibility(int ac, char **av);
 void	is_map_compatibility(char *file, t_map *map);
 
-t_mlx	*alloc_mlx();
+t_mlx	*alloc_mlx(void);
 void	make_bonus(t_map *map);
-void	so_long_exit(t_mlx *mlx);
+int		so_long_exit(t_mlx *mlx);
 
 void	init_mlx(t_mlx *mlx);
 void	draw_map(t_mlx *mlx);
+
+void	init_images(t_mlx *mlx);
 
 void	move_right(t_mlx *mlx);
 void	move_down(t_mlx *mlx);

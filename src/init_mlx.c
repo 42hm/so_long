@@ -6,13 +6,13 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:40:56 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 17:27:12 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 18:23:30 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-static void	draw_10b(t_mlx *mlx, int x, int y)
+static void	draw_01b(t_mlx *mlx, int x, int y)
 {
 	if (mlx->map->maparr[y][x] == '1')
 		mlx_put_image_to_window(mlx->mlx_ptr, mlx->window, \
@@ -77,8 +77,8 @@ void	init_mlx(t_mlx *mlx)
 	int	y;
 
 	mlx->mlx_ptr = mlx_init();
-	mlx->window = mlx_new_window(mlx->mlx_ptr, mlx->map->width * BITSIZE, \
-			mlx->map->height * BITSIZE, "so_long");
+	mlx->window = mlx_new_window(mlx->mlx_ptr, mlx->map->width * 34, \
+			mlx->map->height * 34, "so_long");
 	if (mlx->window == NULL)
 		ft_error_exit("Error\nmlx_new_window error");
 	y = -1;

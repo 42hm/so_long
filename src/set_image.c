@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:34:23 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 17:38:49 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 18:03:21 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	set_player_first(t_mlx *mlx, int temp)
 		"./img/playerd1.xpm", &temp, &temp);
 }
 
-int	init_images(t_mlx *mlx)
+void	init_images(t_mlx *mlx)
 {
 	int	temp;
 
