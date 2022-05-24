@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:34:34 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 08:34:54 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 17:28:03 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static void	is_playable(t_map *map)
 		while (++x < map->width - 1)
 		{
 			if (map->maparr[y][x] == 'P')
-				break;
+				break ;
 		}
 		if (map->maparr[y][x] == 'P')
-			break;
+			break ;
 	}
 	if (map->maparr[y - 1][x - 1] == '1' && map->maparr[y - 1][x] == '1' \
 	&& map->maparr[y - 1][x + 1] == '1' && map->maparr[y][x - 1] == '1' \

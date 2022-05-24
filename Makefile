@@ -6,7 +6,7 @@
 #    By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 12:10:57 by hmoon             #+#    #+#              #
-#    Updated: 2022/05/24 09:04:01 by hmoon            ###   ########.fr        #
+#    Updated: 2022/05/24 17:47:14 by hmoon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ OBJ_DIR_B		:= ./bonus/.obj/
 
 SRC_FILES		:= $(addsuffix .c, so_long \
 					validate_file so_long_utils \
-					validate_map init_mlx)
+					validate_map init_mlx \
+					set_image so_long_move )
 OBJ_FILES		:= $(SRC_FILES:.c=.o)
 SRC				:= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ				:= $(addprefix $(OBJ_DIR), $(OBJ_FILES))

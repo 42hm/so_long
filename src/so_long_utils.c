@@ -6,11 +6,38 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:02:27 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 09:28:07 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 17:26:50 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+static	void	destroy_image(t_mlx *mlx)
+{
+	mlx_destroy_image(mlx->mlx_ptr, mlx->map->wall);
+	mlx_destroy_image(mlx->mlx_ptr, mlx->map->floor);
+	mlx_destroy_image(mlx->mlx_ptr, mlx->map->enemy);
+	mlx_destroy_image(mlx->mlx_ptr, mlx->map->collect);
+	mlx_destroy_image(mlx->mlx_ptr, mlx->map->player);
+}
+
+void	so_long_exit(t_mlx *mlx)
+{
+	int	i;
+
+	i = 0;
+	destroy_image(mlx);
+	mlx_destroy_window(mlx->mlx_ptr, mlx->window);
+	while (mlx->map->maparr[i] != 0)
+	{
+		free(mlx->map->maparr[i]);
+		i++;
+	}
+	free(mlx->map->maparr);
+	free(mlx->map);
+	free(mlx);
+	exit(0);
+}
 
 void	make_bonus(t_map *map)
 {
@@ -25,7 +52,7 @@ void	make_bonus(t_map *map)
 	}
 }
 
-t_mlx	*alloc_mlx()
+t_mlx	*alloc_mlx(void)
 {
 	t_mlx	*temp;
 
