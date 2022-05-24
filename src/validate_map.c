@@ -6,11 +6,12 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 08:34:34 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 19:07:16 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 22:15:18 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+#include <stdio.h>
 
 static void	check_char(t_check *check, char c)
 {
@@ -31,9 +32,6 @@ static void	is_map_possible(t_map *map)
 	t_check	check;
 
 	ft_memset(&check, 0, sizeof(t_check));
-	if (map->height < 3 || map->width < 3 \
-	|| map->height > 30 || map->width > 50)
-		ft_error_exit("Error\nInvalid map size");
 	y = -1;
 	while (++y < map->height)
 	{
@@ -50,7 +48,6 @@ static void	is_map_possible(t_map *map)
 	|| check.start_num < 1 || check.start_num != 1)
 		ft_error_exit("Error\nInvalid map charset");
 	map->collect_num = check.collect_num;
-	make_bonus(map);
 }
 
 static void	get_map_size(char *file, t_map *map)
@@ -84,18 +81,22 @@ void	is_map_compatibility(char *file, t_map *map)
 {
 	int		fd;
 	int		i;
+	char	*line;
 
 	i = 0;
 	fd = ft_open(file, 0);
 	get_map_size(file, map);
-	map->maparr = ft_malloc(sizeof(char *) * (map->height));
-	while ((get_next_line(fd, &(map->maparr[i]))) > 0)
-		i++;
-	if (ft_strlen(map->maparr[i]) == 0)
+	if (map->height < 3 || map->width < 3 \
+	|| map->height > 30 || map->width > 50)
+		ft_error_exit("Error\nInvalid map size");
+	map->maparr = ft_malloc(sizeof(char *) * (map->height + 1));
+	while ((get_next_line(fd, &line) > 0))
 	{
-		free(map->maparr[i]);
-		map->maparr[i] = 0;
+		map->maparr[i++] = ft_strdup(line);
+		free(line);
 	}
+	map->maparr[i] = ft_strdup(line);
+	free(line);
 	ft_close(fd);
 	is_map_possible(map);
 }

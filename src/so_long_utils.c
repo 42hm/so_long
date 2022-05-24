@@ -6,7 +6,7 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:02:27 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/24 18:16:03 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/24 22:35:36 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,22 @@ int	so_long_exit(t_mlx *mlx)
 
 void	make_bonus(t_map *map)
 {
+	int	mod;
+	int	n;
 	int	i;
 
-	i = 0;
-	while (i < map->height && i < map->width)
+	i = 1;
+	n = 9;
+	while (map->maparr[i] != 0)
 	{
-		if (map->maparr[i][map->width / 3] == '0')
-			map->maparr[i][map->width / 3] = 'B';
-		i += 2;
+		mod = ((map->width % n) * i - i);
+		if (mod >= map->width)
+		{
+			mod = ((map->width % i) * (n % i));
+		}
+		if (map->maparr[i][mod] == '0')
+			map->maparr[i][mod] = 'B';
+		i++;
 	}
 }
 
