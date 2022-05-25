@@ -1,7 +1,0 @@
-make clean --dry-run --keep-going --print-directory
-make: Entering directory `/Users/hyunchae/so_long'
-make -sC ./mlx/ clean
-make -C ./libft/ clean
-rm -rf ./.obj/ ./bonus/.obj/ libmlx.dylib
-make: Leaving directory `/Users/hyunchae/so_long'
- 

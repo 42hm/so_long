@@ -6,11 +6,11 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:01:40 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/25 17:08:17 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/25 17:27:54 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../include/so_long_bonus.h"
 
 void	is_file_compatibility(int ac, char **av)
 {

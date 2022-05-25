@@ -6,11 +6,11 @@
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:02:27 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/25 17:24:55 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/25 17:27:39 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../include/so_long_bonus.h"
 
 static unsigned int	ft_rand(unsigned int seed)
 {

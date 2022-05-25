@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoon <hmoon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 02:37:12 by hmoon             #+#    #+#             */
-/*   Updated: 2022/05/25 17:10:13 by hmoon            ###   ########.fr       */
+/*   Updated: 2022/05/25 17:30:32 by hmoon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
-# include "../libft/include/libft.h"
-# include "../mlx/mlx.h"
+# include "../../libft/include/libft.h"
+# include "../../mlx/mlx.h"
 # include <stdlib.h>
 
 enum e_handle
